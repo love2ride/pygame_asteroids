@@ -39,7 +39,7 @@ class Player(CircleShape):
         if keys[pygame.K_SPACE]:
             if self.timer <= 0:  # Überprüfen, ob der Schuss erlaubt ist
                 self.timer = PLAYER_SHOOT_COOLDOWN
-            self.shoot()
+                self.shoot()
         self.move(dt)
             
     def move(self, dt):
