@@ -2,6 +2,8 @@ import pygame
 from constants import *
 from circleshape import CircleShape
 from player import Player
+from asteroid import Asteroid
+from asteroidfield import AsteroidField
 
 def main():
     print("Starting Asteroids!")
@@ -15,14 +17,21 @@ def main():
     
     # 🧍‍♂️ Player in der Mitte des Bildschirms erzeugen
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, radius=20, player_radius=10)
-
-    # Gruppen für update und draw
-    updatables = []
-    drawables = []
-    
     # Füge den Spieler zu den Gruppen hinzu
     updatables.append(player)
     drawables.append(player)
+    
+    # Gruppen für update und draw
+    updatables = []
+    drawables = []
+    asteroids = []
+
+    # Setze die containers für Asteroid und AsteroidField
+    Asteroid.containers = (asteroids, updatables, drawables)
+    AsteroidField.containers = (updatables,)
+    
+    # AsteroidField erzeugen
+    asteroid_field = AsteroidField()
     
     while True:
         # Ereignisse abfragen
