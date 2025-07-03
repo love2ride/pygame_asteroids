@@ -4,6 +4,8 @@ from circleshape import CircleShape
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from shot import Shot
+
 
 def main():
     print("Starting Asteroids!")
@@ -19,10 +21,14 @@ def main():
     updatables = pygame.sprite.Group() 
     drawables = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
+
     
     # Setze die containers für Asteroid und AsteroidField
     Asteroid.containers = (asteroids, updatables, drawables)
     AsteroidField.containers = (updatables,)
+    Shot.containers = (shots, updatables, drawables)
+
     
     # 🧍‍♂️ Player in der Mitte des Bildschirms erzeugen
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, radius=20, player_radius=10)
