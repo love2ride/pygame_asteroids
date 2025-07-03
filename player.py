@@ -37,4 +37,4 @@ class Player(CircleShape):
         if keys[pygame.K_w]:
             self.position += forward * PLAYER_SPEED * dt
         if keys[pygame.K_s]:
-            self.position += forward * PLAYER_SPEED * dt
+            self.position -= forward * PLAYER_SPEED * dt
