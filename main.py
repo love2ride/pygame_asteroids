@@ -44,6 +44,12 @@ def main():
         for obj in updatables:
             obj.update(dt)
         
+        # Kollisionen prüfen
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game over!")
+                return
+        
         # Bildschirm schwarz füllen
         screen.fill((0, 0, 0))
         
