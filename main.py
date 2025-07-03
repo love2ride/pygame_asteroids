@@ -18,8 +18,9 @@ def main():
     # Gruppen für update und draw
     updatables = []
     drawables = []
-    asteroids = []
-
+    # Asteroiden-Gruppe als pygame.sprite.Group!
+    asteroids = pygame.sprite.Group()
+    
     # Setze die containers für Asteroid und AsteroidField
     Asteroid.containers = (asteroids, updatables, drawables)
     AsteroidField.containers = (updatables,)
