@@ -56,6 +56,13 @@ def main():
                 print("Game over!")
                 return
         
+        # Kollisionen prüfen: Schüsse vs. Asteroiden
+        for asteroid in asteroids:
+            for shot in shots:
+                if asteroid.collides_with(shot):
+                    asteroid.kill()
+                    shot.kill()
+                    
         # Bildschirm schwarz füllen
         screen.fill((0, 0, 0))
         
