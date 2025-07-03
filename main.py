@@ -16,9 +16,8 @@ def main():
     dt = 0  # Delta-Zeit initialisieren
     
     # Gruppen für update und draw
-    updatables = []
-    drawables = []
-    # Asteroiden-Gruppe als pygame.sprite.Group!
+    updatables = pygame.sprite.Group() 
+    drawables = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
     
     # Setze die containers für Asteroid und AsteroidField
