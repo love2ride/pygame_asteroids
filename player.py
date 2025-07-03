@@ -26,6 +26,11 @@ class Player(CircleShape):
         pygame.draw.polygon(screen, (255, 255, 255), self.triangle())
         
     def update(self, dt):
+        # Timer verringern
+        if self.timer > 0:
+            self.timer -= dt
+            if self.timer < 0:
+                self.timer = 0
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             self.rotate(-dt)  # Links drehen
