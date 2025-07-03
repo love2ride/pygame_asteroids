@@ -16,19 +16,30 @@ def main():
     # 🧍‍♂️ Player in der Mitte des Bildschirms erzeugen
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, radius=20, player_radius=10)
 
+    # Gruppen für update und draw
+    updatables = []
+    drawables = []
+    
+    # Füge den Spieler zu den Gruppen hinzu
+    updatables.append(player)
+    drawables.append(player)
+    
     while True:
         # Ereignisse abfragen
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
             
-        player.update(dt)
+        # Alle Objekte updaten
+        for obj in updatables:
+            obj.update(dt)
         
         # Bildschirm schwarz füllen
         screen.fill((0, 0, 0))
         
-         # 🎮 Spieler zeichnen
-        player.draw(screen)
+        # Alle Objekte zeichnen
+        for obj in drawables:
+            obj.draw(screen)
         
         # Anzeige aktualisieren
         pygame.display.flip()
