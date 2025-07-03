@@ -27,8 +27,8 @@ def main():
     # 🧍‍♂️ Player in der Mitte des Bildschirms erzeugen
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, radius=20, player_radius=10)
     # Füge den Spieler zu den Gruppen hinzu
-    updatables.append(player)
-    drawables.append(player)
+    updatables.add(player)
+    drawables.add(player)
     
     
     # AsteroidField erzeugen
